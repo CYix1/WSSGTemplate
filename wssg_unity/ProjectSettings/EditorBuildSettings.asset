@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Examples/REST/Friendship.unity
+    guid: 8dd2c6a33d49cbc459814e399884b6b1
+  - enabled: 0
+    path: Assets/Scenes/Examples/REST/TicTacToeRest.unity
+    guid: cb61b961fcc8f6b439652ea2ba34f2fa
+  - enabled: 0
+    path: Assets/Scenes/Examples/REST/Leaderboard.unity
+    guid: a8bc25b037dea6d4eb0702b4c6ddac5c
+  - enabled: 0
+    path: Assets/Scenes/Examples/REST/Combined.unity
+    guid: 0e564cba40d544341b27a1f27faf97d8
+  - enabled: 1
+    path: Assets/Scenes/Examples/REST/Combined 1.unity
+    guid: 85bf1443139d5254bacad3e2ab8c67e6
+  - enabled: 0
+    path: Assets/Scenes/Examples/WS/LeaderboardWS.unity
+    guid: 4e31b6c88fb841e488c7020454030ff4
+  - enabled: 0
+    path: Assets/Scenes/Examples/WS/ChatWS.unity
+    guid: aef5b6538473d3a4bb0787be0eea08ba
+  - enabled: 0
+    path: Assets/Scenes/Examples/WS/TTTWS.unity
+    guid: 66ac3f9dcfa0b0b48ad50a5cb45b3ede
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

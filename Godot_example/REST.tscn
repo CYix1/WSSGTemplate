@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccbv4oenmud3v"]
+
+[ext_resource type="Script" path="res://WSSGRest.gd" id="1_1ep0d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1ep0d")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
