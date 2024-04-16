@@ -1,23 +1,4 @@
-Some code parts are not final!
-
-  
-  
-
-something from sg theory (not implemented!)
-
-ideas:
-
-    - Automatic guild invitation?
-
-         friends as graph and according to the clustering, recommend a guild to the players?
-
-    - based on centrality of the players in a guild => add stats to player XY? or the lobby?
-
-    -
-
-  
-  
-
+This ReadME is NOT FINAL See Wiki!
 # FAQ:
 
   
