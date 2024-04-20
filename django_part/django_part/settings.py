@@ -20,6 +20,9 @@ token_ngrok = "TOKEN_NGROK"
 subdomain_serveo = "SUBDOMAIN_SERVEO"
 network_print = False
 use_ngrok = True
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +34,7 @@ SECRET_KEY = 'social_gaming_insecure_1234567890'
 
 # In theory it should only be some hosts, which are allowed but it's easier for testing
 ALLOWED_HOSTS = [
-    "*",
+    "*", # this allows all hosts... in best case remove it
     "127.0.0.1", "127.0.0.1:8000",
     "localhost",
     subdomain_ngrok,
