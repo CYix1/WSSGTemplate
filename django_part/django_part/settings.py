@@ -10,16 +10,29 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from enum import Enum
 from pathlib import Path
+
+class supported_databases(Enum):
+    SQLLITE = 1
+    POSTGRES = 3
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # It's ok for social gaming!
+used_databases = supported_databases.POSTGRES
 DEBUG = True
-subdomain_ngrok = "SUBDOMAIN_NGROK"
-token_ngrok = "TOKEN_NGROK"
-subdomain_serveo = "SUBDOMAIN_SERVEO"
+subdomain_ngrok = "subdomain_ngrok" #ends with .ngrok-free.app
+token_ngrok = "token_ngrok"
+subdomain_serveo = "subdomain_serveo"
 network_print = False
-use_ngrok = True
+use_ngrok = False
+
+# ======POSTGRES VALUES========
+postgres_database_name = "postgres_database_name"
+postgres_user = "postgres_user"
+postgres_password = "postgres_password"
+postgres_port = 5432 #default by pgadmin4
 
 
 
@@ -30,11 +43,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'social_gaming_insecure_1234567890'
+SECRET_KEY = 'django-insecure-txh29$cc04v_qayg4@ry27u8^i*i=56&z*%!^_+2(6^&1^*%)$'
 
 # In theory it should only be some hosts, which are allowed but it's easier for testing
 ALLOWED_HOSTS = [
-    "*", # this allows all hosts... in best case remove it
+    "*",
     "127.0.0.1", "127.0.0.1:8000",
     "localhost",
     subdomain_ngrok,
@@ -102,13 +115,27 @@ WSGI_APPLICATION = 'django_part.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if(used_databases is supported_databases.POSTGRES):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': postgres_database_name,
+            'USER': postgres_user,
+            'PASSWORD': postgres_password,
+            'HOST': 'localhost',
+            'PORT': postgres_port,
+        }
     }
-}
+
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
