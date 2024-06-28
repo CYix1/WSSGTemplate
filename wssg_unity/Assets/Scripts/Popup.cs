@@ -57,6 +57,7 @@ public class Popup : MonoBehaviour
 
     public void DefaultCallback(ServerMessage serverMessage)
     {
+        Debug.Log(serverMessage);
         if (serverMessage.IsShowMessage())
             SetMessage(serverMessage.message);
 

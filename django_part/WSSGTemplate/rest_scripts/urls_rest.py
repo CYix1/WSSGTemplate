@@ -1,7 +1,7 @@
 from django.urls import path
 
 from WSSGTemplate.rest_scripts import views_basic, views_friendship, views_lobby, views_player, views_inventory, \
-    views_guild, views_TTT, views_leaderboard
+    views_guild, views_TTT, views_leaderboard,views_guild_functions
 
 urlpatterns = [
 
@@ -54,4 +54,8 @@ urlpatterns = [
     path("get_complete_leaderboard_by_category/", views_leaderboard.get_complete_leaderboard_by_category),
     path("update_score_of_player/", views_leaderboard.update_score_of_player),
 
+    # urls for Guild
+    path("join_guild/", views_guild_functions.join_guild),
+    path("leave_guild/", views_guild_functions.leave_guild),
+    path("debug_guild/", views_guild_functions.debug_guild),
 ]

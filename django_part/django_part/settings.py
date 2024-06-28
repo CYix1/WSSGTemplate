@@ -20,13 +20,13 @@ class supported_databases(Enum):
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # It's ok for social gaming!
-used_databases = supported_databases.POSTGRES
+used_databases = supported_databases.SQLLITE
 DEBUG = True
-subdomain_ngrok = "subdomain_ngrok" #ends with .ngrok-free.app
-token_ngrok = "token_ngrok"
-subdomain_serveo = "subdomain_serveo"
+subdomain_ngrok = TODO #ends with .ngrok-free.app subdomain of ngrok
+token_ngrok = TODO #token of ngrok
+subdomain_serveo = TODO  #subdomain of serveo
 network_print = False
-use_ngrok = False
+use_ngrok = True
 
 # ======POSTGRES VALUES========
 postgres_database_name = "postgres_database_name"
