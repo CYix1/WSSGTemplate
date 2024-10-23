@@ -21,7 +21,7 @@ from django.urls import path, include
 
 urlpatterns = [
     # if one wants to add views in the browser TODO
-    path("rest/", include("WSSGTemplate.rest_scripts.urls_rest")),
+    path("rest/", include("WSSGTemplate.Core.Rest.urls_rest")),
     path("admin/", admin.site.urls),
 
 ]

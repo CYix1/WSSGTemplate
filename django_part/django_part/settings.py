@@ -13,6 +13,7 @@ import os
 from enum import Enum
 from pathlib import Path
 
+
 class supported_databases(Enum):
     SQLLITE = 1
     POSTGRES = 3
@@ -22,19 +23,21 @@ class supported_databases(Enum):
 # It's ok for social gaming!
 used_databases = supported_databases.SQLLITE
 DEBUG = True
-subdomain_ngrok = TODO #ends with .ngrok-free.app subdomain of ngrok
-token_ngrok = TODO #token of ngrok
-subdomain_serveo = TODO  #subdomain of serveo
+subdomain_ngrok = "TODO"  # ends with .ngrok-free.app subdomain of ngrok
+token_ngrok = "TODO"  # token of ngrok
+subdomain_serveo = "TODO"  # subdomain of serveo
 network_print = False
-use_ngrok = True
+
+# automatically start NGROK via code in asgi.py DO NOT RECOMMEND!
+# use the runnable from https://ngrok.com/download. Check if your antivirus is blocking the urL!
+# Especially if you are using the TCP connection!
+use_ngrok_code = False
 
 # ======POSTGRES VALUES========
 postgres_database_name = "postgres_database_name"
 postgres_user = "postgres_user"
 postgres_password = "postgres_password"
-postgres_port = 5432 #default by pgadmin4
-
-
+postgres_port = 5432  # default by pgadmin4
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -115,7 +118,7 @@ WSGI_APPLICATION = 'django_part.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if(used_databases is supported_databases.POSTGRES):
+if used_databases is supported_databases.POSTGRES:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -134,8 +137,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

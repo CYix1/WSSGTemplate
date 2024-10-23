@@ -14,8 +14,8 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
 from django.core.wsgi import get_wsgi_application
 
+from WSSGTemplate.Core.Websocket.routing import websocket_urlpatterns
 from WSSGTemplate.NetworkAnalyser import NetworkAnalyser
-from WSSGTemplate.websocket_scripts.routing import websocket_urlpatterns
 from django_part import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_part.settings')
@@ -75,7 +75,7 @@ application = ProtocolTypeRouter(
         ),
     }
 )
-if settings.use_ngrok:
+if settings.use_ngrok_code:
     # TODO make a file with setting etc. which is not full of shit
     """Added by ngrok"""
     # This block handles 'make run-django-uvicorn' and 'make run-django-gunicorn' which uses this asgi.py as the entry point.
