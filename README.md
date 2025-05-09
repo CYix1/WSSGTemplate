@@ -7,3 +7,16 @@ delete all migrations
 And check again with the admin panel e.g 127.0.0.1:8000/admin/
   
 CHECK OLDER COMMITS; RESTRUCTURING ONGOING!!!!!!! 
+
+
+TODO (checking if it works)
+REST:
+- [] GET SET stuff
+- [] Friendship
+- [] Leaderboard
+- [] Lobby/Tictactoe
+
+WS:
+- [] Chat
+- [] Leaderboard
+- [] Tictactoe
